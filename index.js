@@ -25,12 +25,12 @@
 
  const inquirer = require (`./inquirer`);
  const Employee = require (`./Employee`)
- const ask => {
+ const ask () => {
      inquirer.prompt ([
          {
              type: 'input',
              message: 'What is your team manangers name?',
-             name: 'managerName
+             name: 'managerName',
          }
      ]) .then (ans => {
          switch (ans.selection) {
