@@ -20,8 +20,7 @@
     B. need to make it so you can add cards to the html and not have cards premade
         a. that would be like adding seperate items from html to the cards  */
 
- const inquirer = require (`./inquirer`)
-const names = []
+const getName = []
 // names.forEach (name =>{
 //     name.
 // })
@@ -32,21 +31,15 @@ class Employee {
         this.id = id;
         this.email = email;
         this.getRole = 'Employee';
+    } 
+    getName () {
+        return this.name;
     }
-
-   
+    // getName = (ans => {
+    //     const newName = new Employee (ans.name);
+    //     names.push(newName);
+    //     console.log(newName);
+    // })
 }
-   const getName = () => {
-       inquirer.prompt ([
-       {
-           type: 'input',
-           message:'name',
-           message: 'Whats your name?'
-       }
-   ]).then (ans => {
-       const newName = new Employee (ans.name);
-       names.push(newName);
-       console.log(newName);
-   })
-   }
+
 module.exports = Employee, getName;

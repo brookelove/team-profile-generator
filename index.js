@@ -23,25 +23,23 @@
 // runs the entire test where the prompt starts 
 //runs the switch cases through here 
 
-// const inquirer = require (`./inquirer`);
-// const Employee = require (`./Employee`);
-
-// const ask => {
-//     inquirer.prompt ([
-//         {
-//             type: 'input',
-//             message: 'What is your team manangers name?',
-//             name: 'managerName'
-
-//         }
-//     ]) .then (ans => {
-//         switch (ans.selection) {
-//             case "Add a manger": 
-//                 getName();
-//                 break;
-//             default: 
-//                 console.log("Here's your team! Good Luck!")
-//                 break;
-//         }
-//     })
-// }
+ const inquirer = require (`./inquirer`);
+ const Employee = require (`./Employee`)
+ const ask => {
+     inquirer.prompt ([
+         {
+             type: 'input',
+             message: 'What is your team manangers name?',
+             name: 'managerName
+         }
+     ]) .then (ans => {
+         switch (ans.selection) {
+             case "Add a manger": 
+                 getName();
+                 break;
+             default: 
+                 console.log("Here's your team! Good Luck!")
+                 break;
+         }
+     })
+ }
