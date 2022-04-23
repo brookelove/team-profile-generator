@@ -19,3 +19,29 @@
     A. needs to have a HTML file and a CSS file with cards and corresponding outlook
     B. need to make it so you can add cards to the html and not have cards premade
         a. that would be like adding seperate items from html to the cards  */
+
+// runs the entire test where the prompt starts 
+//runs the switch cases through here 
+
+// const inquirer = require (`./inquirer`);
+// const Employee = require (`./Employee`);
+
+// const ask => {
+//     inquirer.prompt ([
+//         {
+//             type: 'input',
+//             message: 'What is your team manangers name?',
+//             name: 'managerName'
+
+//         }
+//     ]) .then (ans => {
+//         switch (ans.selection) {
+//             case "Add a manger": 
+//                 getName();
+//                 break;
+//             default: 
+//                 console.log("Here's your team! Good Luck!")
+//                 break;
+//         }
+//     })
+// }
