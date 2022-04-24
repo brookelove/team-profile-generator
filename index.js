@@ -24,8 +24,8 @@
 //runs the switch cases through here 
 
  const inquirer = require ('inquirer');
- const Manager = require('./Manager');
- const Engineer = require (`./Engineer`);
+ const Manager = require('./develop/lib/Manager');
+ const Engineer = require ('./develop/lib/Engineer');
 
  const managers = []
  const engineers = []
