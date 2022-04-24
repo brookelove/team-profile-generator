@@ -24,7 +24,11 @@
 //runs the switch cases through here 
 
  const inquirer = require ('inquirer');
-//  const Employee = require (`./Employee`)
+ const Manager = require('./Manager');
+ const Engineer = require (`./Engineer`);
+
+ const managers = []
+ const engineers = []
 
 const askmanager = () => {
     inquirer.prompt ([
@@ -34,7 +38,7 @@ const askmanager = () => {
             message:'What is your managers name?', 
         },
         {
-            type: 'input',
+            type: 'Number',
             name: 'managerId',
             message: 'What is your managers employee ID?'
         },
@@ -54,8 +58,11 @@ const askmanager = () => {
             message: 'Please pick your team!',
             choices: ['Add an engineer', 'Add an Intern']
         }
-    ]) .then (() => {
-        mainmenu ()
+    ]) .then (ans => {
+        const newMana = new Manager (ans.managerName);
+        managers.push(newMana);
+        console.log(newMana);
+        mainmenu()
     })
 }
 
@@ -67,11 +74,18 @@ const mainmenu = () => {
             type: 'list',
             name: 'selection',
             message: 'Please pick your team!',
-            choices: ['Add an Engineer!', 'Add an Intern']
+            choices: ['Add an Engineer!', 'Add an Intern!']
         }.then (ans => {
             switch (ans.selection) {
                 case 'Add an Engineer!':
-                createEngineer ();
+                    createEngineer ();
+                    break;
+                case 'Add an Intern!':
+                    createIntern();
+                    break;
+                default: 
+                    console.log('generating html!');
+                    break;
             }
         })
     ])
@@ -81,7 +95,53 @@ const createEngineer = () => {
     inquirer.prompt ([
         {
             type: 'input',
-            name
-        }
+            name: 'engineerName',
+            message: 'What is the engineers name?',
+        },
+        {
+            type: 'Number',
+            name: 'engineerID',
+            message: "what is the engineers employee ID?"
+        },
+        {
+            type: 'input',
+            name: 'engineerEmail',
+            message: 'What is your managers email address?',
+        }, 
+        {
+            type: 'input',
+            name: 'engineerGithub',
+            message: 'What is your engineers Github profile link?',
+        },
+    ]).then (ans => {
+        const newEngin = new Engineer (ans.engineerName);
+        engineers.push(newEngin);
+        console.log(newEngin);
+        mainmenu()
+    })
+}
+
+const createIntern = () => {
+    inquirer.prompt ([
+        {
+            type: 'input',
+            name: 'internName',
+            message: 'What is the interns name?',
+        },
+        {
+            type: 'Number',
+            name: 'internID',
+            message: "what is the intern employee ID?"
+        },
+        {
+            type: 'input',
+            name: 'internEmail',
+            message: 'What is your managers email address?',
+        }, 
+        {
+            type: 'input',
+            name: 'internSchool',
+            message: 'What school does your intern go to?',
+        },
     ])
 }
