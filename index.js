@@ -119,7 +119,7 @@ const createEngineer = () => {
         const newEngin = new Engineer (ans.engineerName, ans.engineerID, engineerEmail, engineerGithub);
         engineers.push(newEngin);
         console.log(newEngin);
-        mainmenu()
+        mainmenu();
     })
 }
 
@@ -145,5 +145,10 @@ const createIntern = () => {
             name: 'internSchool',
             message: 'What school does your intern go to?',
         },
-    ])
+    ]).then (ans => {
+        const newIntr = new Intern (ans.internName, ans.internID, ans.internEmail, ans.internSchool);
+        interns.push(newIntr);
+        console.log(newIntr);
+        mainmenu();
+    })
 }
