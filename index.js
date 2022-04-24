@@ -23,23 +23,49 @@
 // runs the entire test where the prompt starts 
 //runs the switch cases through here 
 
- const inquirer = require (`./inquirer`);
- const Employee = require (`./Employee`)
- const ask () => {
-     inquirer.prompt ([
-         {
-             type: 'input',
-             message: 'What is your team manangers name?',
-             name: 'managerName',
-         }
-     ]) .then (ans => {
-         switch (ans.selection) {
-             case "Add a manger": 
-                 getName();
-                 break;
-             default: 
-                 console.log("Here's your team! Good Luck!")
-                 break;
-         }
-     })
- }
+ const inquirer = require ('./inquirer');
+//  const Employee = require (`./Employee`)
+
+const askmanager = () => {
+    inquirer.promt ([
+        {
+            type: 'input',
+            name: 'managerName',
+            message:'What is your managers name?', 
+        },
+        {
+            type: 'input',
+            name: 'managerId',
+            message: 'What is your managers employee ID?'
+        },
+        {
+            type: 'input',
+            name: 'managerEmail',
+            message: 'What is your managers email address?',
+        },
+        {
+            type: 'Number',
+            name: 'officeNumber',
+            message: 'What is your office number (no spaces or hashes?)',
+        },
+        {
+            type: 'list',
+            name: 'selection',
+            message: 'Please pick your team!',
+            choices: ['Add an engineer', 'Add an Intern']
+        }
+    ]) .then (ans => {
+        mainmenu()
+    })
+}
+
+const mainmenu = () => {
+    inquirer.promt ([
+        {
+            type: 'list',
+            name: 'selection',
+            message: 'Please pick your team!',
+            choices: ['Add an engineer', 'Add an Intern']
+        }
+    ])
+}
