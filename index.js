@@ -54,17 +54,11 @@ const askmanager = () => {
             name: 'officeNumber',
             message: 'What is your managers office number (no spaces or hashes?)',
         },
-        {
-            type: 'list',
-            name: 'selection',
-            message: 'Please pick your team!',
-            choices: ['Add an engineer', 'Add an Intern', 'Give me my team!']
-        }
     ]) .then (ans => {
         const newMana = new Manager (ans.managerName, ans.managerId, ans.managerEmail, ans.officeNumber);
         managers.push(newMana);
         console.log(newMana);
-        mainmenu()
+        mainmenu();
     })
 }
 
@@ -76,8 +70,9 @@ const mainmenu = () => {
             type: 'list',
             name: 'selection',
             message: 'Please pick your team!',
-            choices: ['Add an Engineer!', 'Add an Intern!']
-        }.then (ans => {
+            choices: ['Add an Engineer!', 'Add an Intern!', 'Give me my Team!']
+        }
+    ]).then (ans => {
             switch (ans.selection) {
                 case 'Add an Engineer!':
                     createEngineer ();
@@ -86,11 +81,11 @@ const mainmenu = () => {
                     createIntern();
                     break;
                 default: 
+                    //generating html function goes here
                     console.log('generating html!');
                     break;
             }
         })
-    ])
 }
 
 const createEngineer = () => {
@@ -116,7 +111,7 @@ const createEngineer = () => {
             message: 'What is your engineers Github profile link?',
         },
     ]).then (ans => {
-        const newEngin = new Engineer (ans.engineerName, ans.engineerID, engineerEmail, engineerGithub);
+        const newEngin = new Engineer (ans.engineerName, ans.engineerID, ans.engineerEmail, ans.engineerGithub);
         engineers.push(newEngin);
         console.log(newEngin);
         mainmenu();
