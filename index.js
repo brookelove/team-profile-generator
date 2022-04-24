@@ -50,7 +50,7 @@ const askmanager = () => {
         {
             type: 'Number',
             name: 'officeNumber',
-            message: 'What is your office number (no spaces or hashes?)',
+            message: 'What is your managers office number (no spaces or hashes?)',
         },
         {
             type: 'list',
@@ -59,7 +59,7 @@ const askmanager = () => {
             choices: ['Add an engineer', 'Add an Intern', 'Give me my team!']
         }
     ]) .then (ans => {
-        const newMana = new Manager (ans.managerName);
+        const newMana = new Manager (ans.managerName, ans.managerId, ans.managerEmail, ans.officeNumber);
         managers.push(newMana);
         console.log(newMana);
         mainmenu()
