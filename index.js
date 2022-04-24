@@ -56,7 +56,7 @@ const askmanager = () => {
             type: 'list',
             name: 'selection',
             message: 'Please pick your team!',
-            choices: ['Add an engineer', 'Add an Intern']
+            choices: ['Add an engineer', 'Add an Intern', 'Give me my team!']
         }
     ]) .then (ans => {
         const newMana = new Manager (ans.managerName);
