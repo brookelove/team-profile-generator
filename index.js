@@ -26,9 +26,11 @@
  const inquirer = require ('inquirer');
  const Manager = require('./develop/lib/Manager');
  const Engineer = require ('./develop/lib/Engineer');
+ const Intern = require ('./develop/lib/Intern')
 
  const managers = []
  const engineers = []
+ const interns = []
 
 const askmanager = () => {
     inquirer.prompt ([
@@ -114,7 +116,7 @@ const createEngineer = () => {
             message: 'What is your engineers Github profile link?',
         },
     ]).then (ans => {
-        const newEngin = new Engineer (ans.engineerName);
+        const newEngin = new Engineer (ans.engineerName, ans.engineerID, engineerEmail, engineerGithub);
         engineers.push(newEngin);
         console.log(newEngin);
         mainmenu()
