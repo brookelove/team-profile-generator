@@ -1,5 +1,5 @@
 // create the team
-const generateTeam = (manager, engineer, intern) => {
+const generateTeam = (team) => {
 
     // create the manager html
     const generateManager = manager => {
@@ -14,7 +14,7 @@ const generateTeam = (manager, engineer, intern) => {
             <ul class="list-group">
                 <li class="list-group-item">ID: ${manager.id}</li>
                 <li class="list-group-item">Email: <a href="mailto:${manager.email}">${manager.email}</a></li>
-                <li class="list-group-item">Office number: ${manager.officeNumber}</li>
+                <li class="list-group-item">Office number: ${manager.getOfficeNumber()}</li>
             </ul>
         </div>
     </div>
@@ -62,18 +62,18 @@ const generateTeam = (manager, engineer, intern) => {
 
     const html = [];
 
-    html.push(manager
-        // .filter(employee => employee.getRole() === "Manager")
+    html.push(team
+        .filter(employee => employee.getRole() === "Manager")
         .map(manager => generateManager(manager))
         .join("")
     );
-    html.push(engineer
-        // .filter(employee => employee.getRole() === "Engineer")
+    html.push(team
+         .filter(employee => employee.getRole() === "Engineer")
         .map(engineer => generateEngineer(engineer))
         .join("")
     );
-    html.push(intern
-        // .filter(employee => employee.getRole() === "Intern")
+    html.push(team
+        .filter(employee => employee.getRole() === "Intern")
         .map(intern => generateIntern(intern))
         .join("")
     );
@@ -83,7 +83,7 @@ const generateTeam = (manager, engineer, intern) => {
 }
 
 // export function to generate entire page
-module.exports = (engineer, manager, intern) => {
+module.exports = (team) => {
 
     return `
     <!DOCTYPE html>
@@ -111,7 +111,7 @@ module.exports = (engineer, manager, intern) => {
     <div class="container">
         <div class="row">
             <div class="team-area col-12 d-flex justify-content-center">
-                ${generateTeam(manager, engineer, intern)}
+                ${generateTeam(team)}
             </div>
         </div>
     </div>

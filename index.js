@@ -60,6 +60,7 @@ const askmanager = () => {
         const newMana = new Manager (ans.managerName, ans.managerId, ans.managerEmail, ans.officeNumber);
         manager.push(newMana);
         console.log(newMana);
+        console.log(manager[0]);
         mainmenu();
     })
 }
@@ -85,7 +86,7 @@ const mainmenu = () => {
                 default: 
                     //generating html function goes here
                     console.log('generating html!');
-                    generateHtml(manager, engineer, intern);
+                    fs.writeFileSync('./dist/team.html', generateHtml([...manager, ...engineer, ...intern]));
                     break;
             }
         })
