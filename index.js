@@ -23,14 +23,16 @@
 // runs the entire test where the prompt starts 
 //runs the switch cases through here 
 
- const inquirer = require ('inquirer');
- const Manager = require('./develop/lib/Manager');
- const Engineer = require ('./develop/lib/Engineer');
- const Intern = require ('./develop/lib/Intern')
+const inquirer = require ('inquirer');
+const Manager = require('./develop/lib/Manager');
+const Engineer = require ('./develop/lib/Engineer');
+const Intern = require ('./develop/lib/Intern');
+const generateHtml = require('./develop/util/generateHtml');
 
- const managers = []
- const engineers = []
- const interns = []
+ const manager = [];
+ const engineer = [];
+ const intern = [];
+ const fs = require ('fs');
 
 const askmanager = () => {
     inquirer.prompt ([
@@ -56,7 +58,7 @@ const askmanager = () => {
         },
     ]) .then (ans => {
         const newMana = new Manager (ans.managerName, ans.managerId, ans.managerEmail, ans.officeNumber);
-        managers.push(newMana);
+        manager.push(newMana);
         console.log(newMana);
         mainmenu();
     })
@@ -83,6 +85,7 @@ const mainmenu = () => {
                 default: 
                     //generating html function goes here
                     console.log('generating html!');
+                    generateHtml();
                     break;
             }
         })
@@ -112,7 +115,7 @@ const createEngineer = () => {
         },
     ]).then (ans => {
         const newEngin = new Engineer (ans.engineerName, ans.engineerID, ans.engineerEmail, ans.engineerGithub);
-        engineers.push(newEngin);
+        engineer.push(newEngin);
         console.log(newEngin);
         mainmenu();
     })
@@ -142,7 +145,7 @@ const createIntern = () => {
         },
     ]).then (ans => {
         const newIntr = new Intern (ans.internName, ans.internID, ans.internEmail, ans.internSchool);
-        interns.push(newIntr);
+        intern.push(newIntr);
         console.log(newIntr);
         mainmenu();
     })
