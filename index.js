@@ -85,7 +85,7 @@ const mainmenu = () => {
                 default: 
                     //generating html function goes here
                     console.log('generating html!');
-                    generateHtml();
+                    generateHtml(manager, engineer, intern);
                     break;
             }
         })
