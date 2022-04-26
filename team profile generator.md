@@ -47,9 +47,11 @@
 
 # Mock Up
 
-![Image of team profile generator](image)
+![Image of team profile generator](./images/Screen%20Shot%202022-04-25%20at%208.14.43%20PM.png)
 
-![Gif of team profile generator](imgae)
+![Gif of team profile generator](./images/Screen_Recording_2022-04-25_at_8_30_34_PM_AdobeCreativeCloudExpress.gif)
+
+[link to the walkthrough](https://www.canva.com/design/DAE-889aSGE/DHdDiT-VZNeRA_qG7-1uYg/watch?utm_content=DAE-889aSGE&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink)
 
 # Future
 
@@ -58,7 +60,6 @@
 # License
 
 [MIT](./LICENSE)
-
 
 # Tests
 
