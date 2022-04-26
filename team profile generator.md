@@ -27,24 +27,28 @@
 
 # Description
 
-    This is a project that generates your team of engineers, managers, and interns. The team generators that will take in a persons input and then create a HTML based on the user's input.
+    This is a project that generates your team of engineers, managers, and interns. The team generators that will take in a persons input and then create a HTML based on the user's input. 
 
 # Motivation
 
-    I wanted a project to test my skills on node.js and also create somethign that I can use to generate my team members when I work in my future company
+    I wanted a project to test my skills on node.js and also create somethign that I can use to generate my team members when I work in my future company. THe fun thing about node.js is that it can be applicable to many routes of udnerstanding the dynamics of games.
 
 # Install Instructions
 
-    This program uses node.js and inquirer. Once you clone this program please run this command in your integrated terminal npm i which will install all the necessary information.
+    This program uses node.js and inquirer. Once you clone this program please run this command in your integrated terminal
+
+    > npm i 
+
+    which will install all the necessary information.
 
 # Usage
 
-    I am using this app to understand node.js ad to create a team profile with manager, interns and engineers.
+    I am using this app to understand node.js ad to create a team profile with manager, interns and engineers. This is useful in having core developments of backend coding
 
 # Mock Up
 
 ![Image of team profile generator](image)
-    
+
 ![Gif of team profile generator](imgae)
 
 # Future
@@ -55,18 +59,15 @@
 
 [MIT](./LICENSE)
 
-# Contributors
-
-    N/A
 
 # Tests
 
-    Jest
+    Jest was used during this program to test the effectiveness of the different backend javascript components.
 
-# Questions? 
+# Questions?
 
 Feel Free to reach me at!
 
-brookelovedevelops@outlook.com | 
+* brookelovedevelops@outlook.com
 
-[brookelove Profile](https://github.com/brookelove)
+* [brookelove Profile](https://github.com/brookelove)
